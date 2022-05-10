@@ -10,10 +10,15 @@ import java.util.ArrayList;
 @Service
 public class VendedorService {
         @Autowired
-         VendedorRepositoriry vendedorRepositoriry;
+        static
+        VendedorRepositoriry vendedorRepositoriry;
 
-        public ArrayList<Vendedor> obtenerVendedores(){
+        public static ArrayList<Vendedor> obtenerVendedores(){
             return (ArrayList<Vendedor>) vendedorRepositoriry.findAll();
+        }
+
+        public Vendedor guardarUsuario(Vendedor vendedor){
+            return vendedorRepositoriry.save(vendedor);
         }
 
 }
